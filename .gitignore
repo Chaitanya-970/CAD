@@ -15,8 +15,7 @@ backend/uploads/*
 node_modules/
 __pycache__/
 .venv/
-env/
-venv/
+.next/
 
 # OS
 .DS_Store
@@ -25,10 +24,12 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
+.gemini/
 
 # PPT Template (design extracted to DESIGN.md)
 *.pptx
 *.ppt
 *.key
+
+# Reviews
+reviews/
