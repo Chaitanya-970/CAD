@@ -27,3 +27,8 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# PPT Template (design extracted to DESIGN.md)
+*.pptx
+*.ppt
+*.key
