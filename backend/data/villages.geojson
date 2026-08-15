@@ -1,0 +1,1205 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.0904,
+          26.8803
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "name": "Majuli Village 1",
+        "name_assamese": "গাওঁ 1",
+        "district": "Majuli",
+        "latitude": 26.8803,
+        "longitude": 94.0904,
+        "elevation_m": 90.1,
+        "population_est": 674
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7477,
+          24.7675
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "name": "Silchar Village 2",
+        "name_assamese": "গাওঁ 2",
+        "district": "Silchar",
+        "latitude": 24.7675,
+        "longitude": 92.7477,
+        "elevation_m": 22.3,
+        "population_est": 2477
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1271,
+          26.946
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "name": "Majuli Village 3",
+        "name_assamese": "গাওঁ 3",
+        "district": "Majuli",
+        "latitude": 26.946,
+        "longitude": 94.1271,
+        "elevation_m": 82.2,
+        "population_est": 880
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8565,
+          24.8796
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "name": "Silchar Village 4",
+        "name_assamese": "গাওঁ 4",
+        "district": "Silchar",
+        "latitude": 24.8796,
+        "longitude": 92.8565,
+        "elevation_m": 27.3,
+        "population_est": 4317
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8091,
+          24.7412
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "name": "Silchar Village 5",
+        "name_assamese": "গাওঁ 5",
+        "district": "Silchar",
+        "latitude": 24.7412,
+        "longitude": 92.8091,
+        "elevation_m": 27.5,
+        "population_est": 2167
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.0391,
+          26.0959
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "name": "Dhubri Village 6",
+        "name_assamese": "গাওঁ 6",
+        "district": "Dhubri",
+        "latitude": 26.0959,
+        "longitude": 90.0391,
+        "elevation_m": 30.3,
+        "population_est": 607
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8163,
+          24.8271
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "name": "Silchar Village 7",
+        "name_assamese": "গাওঁ 7",
+        "district": "Silchar",
+        "latitude": 24.8271,
+        "longitude": 92.8163,
+        "elevation_m": 36.0,
+        "population_est": 2603
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8254,
+          24.8709
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "name": "Silchar Village 8",
+        "name_assamese": "গাওঁ 8",
+        "district": "Silchar",
+        "latitude": 24.8709,
+        "longitude": 92.8254,
+        "elevation_m": 32.9,
+        "population_est": 1241
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1555,
+          27.0304
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "name": "Majuli Village 9",
+        "name_assamese": "গাওঁ 9",
+        "district": "Majuli",
+        "latitude": 27.0304,
+        "longitude": 94.1555,
+        "elevation_m": 86.9,
+        "population_est": 656
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1785,
+          27.0436
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "name": "Majuli Village 10",
+        "name_assamese": "গাওঁ 10",
+        "district": "Majuli",
+        "latitude": 27.0436,
+        "longitude": 94.1785,
+        "elevation_m": 96.2,
+        "population_est": 2303
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.6726,
+          24.8803
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "name": "Silchar Village 11",
+        "name_assamese": "গাওঁ 11",
+        "district": "Silchar",
+        "latitude": 24.8803,
+        "longitude": 92.6726,
+        "elevation_m": 28.3,
+        "population_est": 2113
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.9965,
+          26.0414
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "name": "Dhubri Village 12",
+        "name_assamese": "গাওঁ 12",
+        "district": "Dhubri",
+        "latitude": 26.0414,
+        "longitude": 89.9965,
+        "elevation_m": 46.8,
+        "population_est": 4796
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.193,
+          26.9609
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "name": "Majuli Village 13",
+        "name_assamese": "গাওঁ 13",
+        "district": "Majuli",
+        "latitude": 26.9609,
+        "longitude": 94.193,
+        "elevation_m": 94.6,
+        "population_est": 3299
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.6962,
+          24.8944
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "name": "Silchar Village 14",
+        "name_assamese": "গাওঁ 14",
+        "district": "Silchar",
+        "latitude": 24.8944,
+        "longitude": 92.6962,
+        "elevation_m": 33.0,
+        "population_est": 2193
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8258,
+          24.8145
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "name": "Silchar Village 15",
+        "name_assamese": "গাওঁ 15",
+        "district": "Silchar",
+        "latitude": 24.8145,
+        "longitude": 92.8258,
+        "elevation_m": 35.6,
+        "population_est": 4565
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1086,
+          26.9771
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "name": "Majuli Village 16",
+        "name_assamese": "গাওঁ 16",
+        "district": "Majuli",
+        "latitude": 26.9771,
+        "longitude": 94.1086,
+        "elevation_m": 94.3,
+        "population_est": 4253
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1314,
+          27.0393
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "name": "Majuli Village 17",
+        "name_assamese": "গাওঁ 17",
+        "district": "Majuli",
+        "latitude": 27.0393,
+        "longitude": 94.1314,
+        "elevation_m": 91.0,
+        "population_est": 4857
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.2192,
+          27.0263
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "name": "Majuli Village 18",
+        "name_assamese": "গাওঁ 18",
+        "district": "Majuli",
+        "latitude": 27.0263,
+        "longitude": 94.2192,
+        "elevation_m": 90.2,
+        "population_est": 562
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7674,
+          24.7791
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "name": "Silchar Village 19",
+        "name_assamese": "গাওঁ 19",
+        "district": "Silchar",
+        "latitude": 24.7791,
+        "longitude": 92.7674,
+        "elevation_m": 17.6,
+        "population_est": 2591
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.2292,
+          26.9472
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "name": "Majuli Village 20",
+        "name_assamese": "গাওঁ 20",
+        "district": "Majuli",
+        "latitude": 26.9472,
+        "longitude": 94.2292,
+        "elevation_m": 86.0,
+        "population_est": 775
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8614,
+          24.8982
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "name": "Silchar Village 21",
+        "name_assamese": "গাওঁ 21",
+        "district": "Silchar",
+        "latitude": 24.8982,
+        "longitude": 92.8614,
+        "elevation_m": 22.9,
+        "population_est": 878
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1706,
+          26.9669
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "name": "Majuli Village 22",
+        "name_assamese": "গাওঁ 22",
+        "district": "Majuli",
+        "latitude": 26.9669,
+        "longitude": 94.1706,
+        "elevation_m": 91.1,
+        "population_est": 3482
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.0952,
+          26.98
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "name": "Majuli Village 23",
+        "name_assamese": "গাওঁ 23",
+        "district": "Majuli",
+        "latitude": 26.98,
+        "longitude": 94.0952,
+        "elevation_m": 82.1,
+        "population_est": 2573
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.0093,
+          26.0183
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "name": "Dhubri Village 24",
+        "name_assamese": "গাওঁ 24",
+        "district": "Dhubri",
+        "latitude": 26.0183,
+        "longitude": 90.0093,
+        "elevation_m": 39.8,
+        "population_est": 2586
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.142,
+          26.8684
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "name": "Majuli Village 25",
+        "name_assamese": "গাওঁ 25",
+        "district": "Majuli",
+        "latitude": 26.8684,
+        "longitude": 94.142,
+        "elevation_m": 83.8,
+        "population_est": 2593
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1673,
+          27.0255
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "name": "Majuli Village 26",
+        "name_assamese": "গাওঁ 26",
+        "district": "Majuli",
+        "latitude": 27.0255,
+        "longitude": 94.1673,
+        "elevation_m": 90.9,
+        "population_est": 4431
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1881,
+          26.9419
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "name": "Majuli Village 27",
+        "name_assamese": "গাওঁ 27",
+        "district": "Majuli",
+        "latitude": 26.9419,
+        "longitude": 94.1881,
+        "elevation_m": 89.6,
+        "population_est": 4483
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1701,
+          26.9404
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "name": "Majuli Village 28",
+        "name_assamese": "গাওঁ 28",
+        "district": "Majuli",
+        "latitude": 26.9404,
+        "longitude": 94.1701,
+        "elevation_m": 91.2,
+        "population_est": 4455
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.8808,
+          26.1064
+        ]
+      },
+      "properties": {
+        "id": 29,
+        "name": "Dhubri Village 29",
+        "name_assamese": "গাওঁ 29",
+        "district": "Dhubri",
+        "latitude": 26.1064,
+        "longitude": 89.8808,
+        "elevation_m": 46.2,
+        "population_est": 3846
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.741,
+          24.7383
+        ]
+      },
+      "properties": {
+        "id": 30,
+        "name": "Silchar Village 30",
+        "name_assamese": "গাওঁ 30",
+        "district": "Silchar",
+        "latitude": 24.7383,
+        "longitude": 92.741,
+        "elevation_m": 24.5,
+        "population_est": 2251
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7265,
+          24.8475
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "name": "Silchar Village 31",
+        "name_assamese": "গাওঁ 31",
+        "district": "Silchar",
+        "latitude": 24.8475,
+        "longitude": 92.7265,
+        "elevation_m": 17.4,
+        "population_est": 2663
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7043,
+          24.8619
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "name": "Silchar Village 32",
+        "name_assamese": "গাওঁ 32",
+        "district": "Silchar",
+        "latitude": 24.8619,
+        "longitude": 92.7043,
+        "elevation_m": 28.6,
+        "population_est": 3877
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.8971,
+          26.0703
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "name": "Dhubri Village 33",
+        "name_assamese": "গাওঁ 33",
+        "district": "Dhubri",
+        "latitude": 26.0703,
+        "longitude": 89.8971,
+        "elevation_m": 48.8,
+        "population_est": 3527
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.9651,
+          26.0018
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "name": "Dhubri Village 34",
+        "name_assamese": "গাওঁ 34",
+        "district": "Dhubri",
+        "latitude": 26.0018,
+        "longitude": 89.9651,
+        "elevation_m": 36.1,
+        "population_est": 1741
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.9399,
+          26.0804
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "name": "Dhubri Village 35",
+        "name_assamese": "গাওঁ 35",
+        "district": "Dhubri",
+        "latitude": 26.0804,
+        "longitude": 89.9399,
+        "elevation_m": 44.2,
+        "population_est": 3459
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.8753,
+          25.9421
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "name": "Dhubri Village 36",
+        "name_assamese": "গাওঁ 36",
+        "district": "Dhubri",
+        "latitude": 25.9421,
+        "longitude": 89.8753,
+        "elevation_m": 46.8,
+        "population_est": 4336
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.2411,
+          26.9878
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "name": "Majuli Village 37",
+        "name_assamese": "গাওঁ 37",
+        "district": "Majuli",
+        "latitude": 26.9878,
+        "longitude": 94.2411,
+        "elevation_m": 90.9,
+        "population_est": 1135
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.0882,
+          26.9307
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "name": "Majuli Village 38",
+        "name_assamese": "গাওঁ 38",
+        "district": "Majuli",
+        "latitude": 26.9307,
+        "longitude": 94.0882,
+        "elevation_m": 90.0,
+        "population_est": 3579
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.2195,
+          26.9394
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "name": "Majuli Village 39",
+        "name_assamese": "গাওঁ 39",
+        "district": "Majuli",
+        "latitude": 26.9394,
+        "longitude": 94.2195,
+        "elevation_m": 99.4,
+        "population_est": 4412
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1686,
+          26.9315
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "name": "Majuli Village 40",
+        "name_assamese": "গাওঁ 40",
+        "district": "Majuli",
+        "latitude": 26.9315,
+        "longitude": 94.1686,
+        "elevation_m": 95.1,
+        "population_est": 588
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.6935,
+          24.8527
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "name": "Silchar Village 41",
+        "name_assamese": "গাওঁ 41",
+        "district": "Silchar",
+        "latitude": 24.8527,
+        "longitude": 92.6935,
+        "elevation_m": 17.4,
+        "population_est": 614
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8597,
+          24.8384
+        ]
+      },
+      "properties": {
+        "id": 42,
+        "name": "Silchar Village 42",
+        "name_assamese": "গাওঁ 42",
+        "district": "Silchar",
+        "latitude": 24.8384,
+        "longitude": 92.8597,
+        "elevation_m": 34.0,
+        "population_est": 1565
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7614,
+          24.7442
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "name": "Silchar Village 43",
+        "name_assamese": "গাওঁ 43",
+        "district": "Silchar",
+        "latitude": 24.7442,
+        "longitude": 92.7614,
+        "elevation_m": 32.2,
+        "population_est": 2277
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.9525,
+          26.0522
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "name": "Dhubri Village 44",
+        "name_assamese": "গাওঁ 44",
+        "district": "Dhubri",
+        "latitude": 26.0522,
+        "longitude": 89.9525,
+        "elevation_m": 35.8,
+        "population_est": 538
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.0463,
+          26.0285
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "name": "Dhubri Village 45",
+        "name_assamese": "গাওঁ 45",
+        "district": "Dhubri",
+        "latitude": 26.0285,
+        "longitude": 90.0463,
+        "elevation_m": 35.3,
+        "population_est": 3905
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1552,
+          26.8802
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "name": "Majuli Village 46",
+        "name_assamese": "গাওঁ 46",
+        "district": "Majuli",
+        "latitude": 26.8802,
+        "longitude": 94.1552,
+        "elevation_m": 97.4,
+        "population_est": 1189
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1444,
+          26.9409
+        ]
+      },
+      "properties": {
+        "id": 47,
+        "name": "Majuli Village 47",
+        "name_assamese": "গাওঁ 47",
+        "district": "Majuli",
+        "latitude": 26.9409,
+        "longitude": 94.1444,
+        "elevation_m": 86.4,
+        "population_est": 2254
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.983,
+          26.0912
+        ]
+      },
+      "properties": {
+        "id": 48,
+        "name": "Dhubri Village 48",
+        "name_assamese": "গাওঁ 48",
+        "district": "Dhubri",
+        "latitude": 26.0912,
+        "longitude": 89.983,
+        "elevation_m": 35.1,
+        "population_est": 2228
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.8738,
+          26.0446
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "name": "Dhubri Village 49",
+        "name_assamese": "গাওঁ 49",
+        "district": "Dhubri",
+        "latitude": 26.0446,
+        "longitude": 89.8738,
+        "elevation_m": 40.9,
+        "population_est": 3094
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.0712,
+          26.9492
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "name": "Majuli Village 50",
+        "name_assamese": "গাওঁ 50",
+        "district": "Majuli",
+        "latitude": 26.9492,
+        "longitude": 94.0712,
+        "elevation_m": 81.0,
+        "population_est": 3341
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7298,
+          24.875
+        ]
+      },
+      "properties": {
+        "id": 51,
+        "name": "Silchar Village 51",
+        "name_assamese": "গাওঁ 51",
+        "district": "Silchar",
+        "latitude": 24.875,
+        "longitude": 92.7298,
+        "elevation_m": 30.6,
+        "population_est": 4798
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7638,
+          24.7899
+        ]
+      },
+      "properties": {
+        "id": 52,
+        "name": "Silchar Village 52",
+        "name_assamese": "গাওঁ 52",
+        "district": "Silchar",
+        "latitude": 24.7899,
+        "longitude": 92.7638,
+        "elevation_m": 23.4,
+        "population_est": 2284
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1727,
+          26.8921
+        ]
+      },
+      "properties": {
+        "id": 53,
+        "name": "Majuli Village 53",
+        "name_assamese": "গাওঁ 53",
+        "district": "Majuli",
+        "latitude": 26.8921,
+        "longitude": 94.1727,
+        "elevation_m": 97.2,
+        "population_est": 789
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.9335,
+          25.9644
+        ]
+      },
+      "properties": {
+        "id": 54,
+        "name": "Dhubri Village 54",
+        "name_assamese": "গাওঁ 54",
+        "district": "Dhubri",
+        "latitude": 25.9644,
+        "longitude": 89.9335,
+        "elevation_m": 33.5,
+        "population_est": 1444
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.1415,
+          27.002
+        ]
+      },
+      "properties": {
+        "id": 55,
+        "name": "Majuli Village 55",
+        "name_assamese": "গাওঁ 55",
+        "district": "Majuli",
+        "latitude": 27.002,
+        "longitude": 94.1415,
+        "elevation_m": 84.3,
+        "population_est": 1585
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.0704,
+          26.9337
+        ]
+      },
+      "properties": {
+        "id": 56,
+        "name": "Majuli Village 56",
+        "name_assamese": "গাওঁ 56",
+        "district": "Majuli",
+        "latitude": 26.9337,
+        "longitude": 94.0704,
+        "elevation_m": 98.5,
+        "population_est": 2264
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.969,
+          25.9608
+        ]
+      },
+      "properties": {
+        "id": 57,
+        "name": "Dhubri Village 57",
+        "name_assamese": "গাওঁ 57",
+        "district": "Dhubri",
+        "latitude": 25.9608,
+        "longitude": 89.969,
+        "elevation_m": 43.1,
+        "population_est": 745
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.7941,
+          24.9144
+        ]
+      },
+      "properties": {
+        "id": 58,
+        "name": "Silchar Village 58",
+        "name_assamese": "গাওঁ 58",
+        "district": "Silchar",
+        "latitude": 24.9144,
+        "longitude": 92.7941,
+        "elevation_m": 25.6,
+        "population_est": 2012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.6892,
+          24.8841
+        ]
+      },
+      "properties": {
+        "id": 59,
+        "name": "Silchar Village 59",
+        "name_assamese": "গাওঁ 59",
+        "district": "Silchar",
+        "latitude": 24.8841,
+        "longitude": 92.6892,
+        "elevation_m": 25.7,
+        "population_est": 4168
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.0243,
+          26.0095
+        ]
+      },
+      "properties": {
+        "id": 60,
+        "name": "Dhubri Village 60",
+        "name_assamese": "গাওঁ 60",
+        "district": "Dhubri",
+        "latitude": 26.0095,
+        "longitude": 90.0243,
+        "elevation_m": 44.7,
+        "population_est": 1003
+      }
+    }
+  ]
+}

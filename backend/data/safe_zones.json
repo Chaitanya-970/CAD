@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Safe Zone 1",
+    "latitude": 25.945254930719923,
+    "longitude": 89.97674126679365,
+    "elevation_m": 53.967464638378786,
+    "road_access_score": 0.58,
+    "capacity_est": 1502,
+    "safe_score": 0.0,
+    "nearest_village_id": 57
+  },
+  {
+    "id": 2,
+    "name": "Safe Zone 2",
+    "latitude": 25.92274848399507,
+    "longitude": 89.85761320683238,
+    "elevation_m": 65.24499550165609,
+    "road_access_score": 0.66,
+    "capacity_est": 784,
+    "safe_score": 0.0,
+    "nearest_village_id": 36
+  },
+  {
+    "id": 3,
+    "name": "Safe Zone 3",
+    "latitude": 25.96674945108461,
+    "longitude": 89.96053142532271,
+    "elevation_m": 49.24164881260338,
+    "road_access_score": 1.0,
+    "capacity_est": 1247,
+    "safe_score": 0.0,
+    "nearest_village_id": 57
+  },
+  {
+    "id": 4,
+    "name": "Safe Zone 4",
+    "latitude": 26.993782170587316,
+    "longitude": 94.24642532397907,
+    "elevation_m": 96.2636620750944,
+    "road_access_score": 0.94,
+    "capacity_est": 717,
+    "safe_score": 0.0,
+    "nearest_village_id": 37
+  },
+  {
+    "id": 5,
+    "name": "Safe Zone 5",
+    "latitude": 26.985649836854186,
+    "longitude": 94.16939616288744,
+    "elevation_m": 100.00650546137463,
+    "road_access_score": 0.85,
+    "capacity_est": 853,
+    "safe_score": 0.0,
+    "nearest_village_id": 22
+  },
+  {
+    "id": 6,
+    "name": "Safe Zone 6",
+    "latitude": 26.917957342479184,
+    "longitude": 94.0671120647568,
+    "elevation_m": 104.89521027749073,
+    "road_access_score": 0.5,
+    "capacity_est": 1946,
+    "safe_score": 0.0,
+    "nearest_village_id": 56
+  },
+  {
+    "id": 7,
+    "name": "Safe Zone 7",
+    "latitude": 24.8211092681606,
+    "longitude": 92.84121251936062,
+    "elevation_m": 53.35153606047492,
+    "road_access_score": 0.94,
+    "capacity_est": 1598,
+    "safe_score": 0.0,
+    "nearest_village_id": 42
+  },
+  {
+    "id": 8,
+    "name": "Safe Zone 8",
+    "latitude": 26.985126655223283,
+    "longitude": 94.22401327414406,
+    "elevation_m": 106.90545874077293,
+    "road_access_score": 0.94,
+    "capacity_est": 819,
+    "safe_score": 0.0,
+    "nearest_village_id": 37
+  },
+  {
+    "id": 9,
+    "name": "Safe Zone 9",
+    "latitude": 26.981583878208337,
+    "longitude": 94.1251641149745,
+    "elevation_m": 110.73289405438067,
+    "road_access_score": 0.67,
+    "capacity_est": 1099,
+    "safe_score": 0.0,
+    "nearest_village_id": 16
+  },
+  {
+    "id": 10,
+    "name": "Safe Zone 10",
+    "latitude": 24.741694342060068,
+    "longitude": 92.74056619344378,
+    "elevation_m": 41.175696637899094,
+    "road_access_score": 0.89,
+    "capacity_est": 1725,
+    "safe_score": 0.0,
+    "nearest_village_id": 30
+  }
+]
