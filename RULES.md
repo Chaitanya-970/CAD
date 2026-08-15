@@ -528,24 +528,34 @@ Use the format: `[feature-id] short description`
 [fix] Correct CORS config for localhost:3000
 ```
 
+### R45: Branching Strategy (Branch-per-Track)
+To move fast without merge conflicts, development happens in three long-lived track branches, NOT per-feature branches. 
+- Person A works exclusively on `backend-dev`
+- Person B works exclusively on `ml-dev`
+- Person C works exclusively on `frontend-dev`
+When a major component is working (e.g., an API endpoint or UI page), merge that track branch into `main`. Other team members should frequently `git pull origin main` into their track branches to stay synced.
+
+### R46: Manual Review Required for Git
+AI assistants must NEVER push or commit directly to the repository without explicitly asking the user for permission first. The user must review all changes before they are committed or pushed to the remote branch.
+
 ---
 
 ## 18. Demo-Specific Rules
 
-### R45: Chrome Only
+### R47: Chrome Only
 The demo must run in Google Chrome. Do not spend time fixing Firefox or Safari compatibility issues. `navigator.connection` (F8) is Chromium-only.
 
-### R46: Localhost Only
+### R48: Localhost Only
 The app runs on `localhost:3000` (frontend) and `localhost:8000` (backend). No deployment to Vercel/Railway/Render is needed. Do not add deployment configs.
 
-### R47: Demo Data Must Be Realistic
+### R49: Demo Data Must Be Realistic
 Simulated river levels, village names, and SOS messages must use real Assamese place names and realistic water-level values. Do not use "Test Village 1" or "Lorem Ipsum." Judges notice.
 
 ---
 
 ## Self-Check Results
 
-1. **Rule count:** R1–R47, 47 rules total. Verified sequentially — no gaps, no duplicates, no skipped numbers.
+1. **Rule count:** R1–R49, 49 rules total. Verified sequentially — no gaps, no duplicates, no skipped numbers.
 2. **Feature ID cross-references:** Every feature ID referenced in this document (F1–F25) was verified against FEATURES.md. Mappings:
    - R1 folder structure references: F1, F11, F12, F6, F4, F16, F7, F8 — all valid feature IDs.
    - R10 endpoint-to-feature mapping: verified each feature ID matches the correct endpoint.
