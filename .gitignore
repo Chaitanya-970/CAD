@@ -31,5 +31,9 @@ Thumbs.db
 *.ppt
 *.key
 
-# Reviews
+# Reviews & Changes
 reviews/
+changes/
+
+# Local Dev Files
+MY_WORKLOAD.md
