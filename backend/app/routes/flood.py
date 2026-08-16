@@ -46,10 +46,14 @@ async def get_flood_zones():
 
 @router.post("/api/predict", response_model=PredictResponse)
 async def predict_flood(request: PredictRequest = None):
-    # 1. Get river levels
+    # 1. Get and update river levels
     river_levels = []
     if request and request.river_levels:
         river_levels = [rl.model_dump() for rl in request.river_levels]
+        # Update DB with simulation values (F20)
+        from app.db import execute_many
+        update_data = [(rl['current_level_m'], rl['forecast_rise_m'], rl['station_name']) for rl in river_levels]
+        execute_many("UPDATE river_levels SET current_level_m = ?, forecast_rise_m = ? WHERE station_name = ?", update_data)
     else:
         # Use DB data if no payload provided
         river_levels = fetch_all("SELECT * FROM river_levels")
