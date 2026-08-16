@@ -35,3 +35,9 @@ async def assess_crop(image: UploadFile = File(...)):
     """, (filepath, result.crop_type, result.damage_pct, result.advisory_en, result.advisory_as))
     
     return result
+
+@router.get("/api/crop-assessments")
+async def get_crop_assessments():
+    """Retrieve history of all crop assessments."""
+    assessments = fetch_all("SELECT * FROM crop_assessments ORDER BY created_at DESC")
+    return {"assessments": assessments}
