@@ -1,16 +1,24 @@
 import json
 import time
 import logging
+import warnings
 import google.generativeai as genai
+from groq import Groq
 from app.config import settings
+
+# Suppress google.generativeai deprecation warning (P3 fix)
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 logger = logging.getLogger("afip")
 
 # Initialize Gemini Client
 genai.configure(api_key=settings.GEMINI_API_KEY)
-# We use gemini-flash-latest as the fast, cheap default for most tasks.
 model = genai.GenerativeModel('gemini-flash-latest')
-vision_model = genai.GenerativeModel('gemini-flash-latest') # flash also handles vision
+vision_model = genai.GenerativeModel('gemini-flash-latest')
+
+# Initialize Groq Client (Fallback)
+groq_client = Groq(api_key=settings.GROQ_API_KEY)
+GROQ_MODEL = "llama3-8b-8192"
 
 # -----------------------------------------------------------------------------
 # Prompt Constants (To be tuned by ML Teammate)
@@ -47,6 +55,13 @@ Translate the following English text into clear, natural Assamese.
 Return ONLY the Assamese text. Do not add any introductory or concluding remarks.
 """
 
+CROP_ASSESS_PROMPT = """
+You are an agricultural expert in Assam, India.
+Analyze this flood-damaged crop image and return ONLY valid JSON:
+{"crop_type": "string", "damage_pct": int, "advisory_en": "string", "advisory_as": "string"}
+Make sure advisory_as is the Assamese translation of advisory_en.
+"""
+
 # -----------------------------------------------------------------------------
 # LLM Service Functions
 # -----------------------------------------------------------------------------
@@ -61,8 +76,19 @@ async def answer_query(question: str, context: dict) -> str:
         logger.info(f"[Gemini] answer_query — Success ({duration_ms:.0f}ms)")
         return response.text.strip()
     except Exception as e:
-        logger.error(f"[Gemini] answer_query failed — {e}")
-        return "I couldn't process that query. Try rephrasing, or view the map directly."
+        logger.warning(f"[Gemini] answer_query failed: {e}. Falling back to Groq.")
+        try:
+            start = time.time()
+            completion = groq_client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[{"role": "user", "content": full_prompt}]
+            )
+            duration_ms = (time.time() - start) * 1000
+            logger.info(f"[Groq] answer_query — Success ({duration_ms:.0f}ms)")
+            return completion.choices[0].message.content.strip()
+        except Exception as groq_e:
+            logger.error(f"[Groq] answer_query failed — {groq_e}")
+            return "I couldn't process that query. Try rephrasing, or view the map directly."
 
 async def parse_sos_text(raw_text: str) -> dict:
     """Parses raw text into structured SOS data (location, people_count, needs)."""
@@ -79,8 +105,23 @@ async def parse_sos_text(raw_text: str) -> dict:
         logger.info(f"[Gemini] parse_sos_text — Success ({duration_ms:.0f}ms)")
         return json.loads(response.text)
     except Exception as e:
-        logger.error(f"[Gemini] parse_sos_text failed — {e}")
-        return {"location": None, "people_count": None, "needs": None}
+        logger.warning(f"[Gemini] parse_sos_text failed: {e}. Falling back to Groq.")
+        try:
+            start = time.time()
+            completion = groq_client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": "You must output valid JSON."},
+                    {"role": "user", "content": full_prompt}
+                ],
+                response_format={"type": "json_object"}
+            )
+            duration_ms = (time.time() - start) * 1000
+            logger.info(f"[Groq] parse_sos_text — Success ({duration_ms:.0f}ms)")
+            return json.loads(completion.choices[0].message.content)
+        except Exception as groq_e:
+            logger.error(f"[Groq] parse_sos_text failed — {groq_e}")
+            return {"location": None, "people_count": None, "needs": None}
 
 async def generate_alert_message(village_data: dict) -> str:
     """Generates an urgent but calm SMS alert based on prediction data."""
@@ -92,9 +133,19 @@ async def generate_alert_message(village_data: dict) -> str:
         logger.info(f"[Gemini] generate_alert_message — Success ({duration_ms:.0f}ms)")
         return response.text.strip()
     except Exception as e:
-        logger.error(f"[Gemini] generate_alert_message failed — {e}")
-        # Fallback to standard template if LLM fails
-        return f"ALERT: High flood risk for {village_data.get('name', 'your village')}. Evacuate immediately."
+        logger.warning(f"[Gemini] generate_alert_message failed: {e}. Falling back to Groq.")
+        try:
+            start = time.time()
+            completion = groq_client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[{"role": "user", "content": full_prompt}]
+            )
+            duration_ms = (time.time() - start) * 1000
+            logger.info(f"[Groq] generate_alert_message — Success ({duration_ms:.0f}ms)")
+            return completion.choices[0].message.content.strip()
+        except Exception as groq_e:
+            logger.error(f"[Groq] generate_alert_message failed — {groq_e}")
+            return f"ALERT: High flood risk for {village_data.get('name', 'your village')}. Evacuate immediately."
 
 async def translate_to_assamese(text: str) -> str:
     """Translates English text to Assamese."""
@@ -106,20 +157,24 @@ async def translate_to_assamese(text: str) -> str:
         logger.info(f"[Gemini] translate_to_assamese — Success ({duration_ms:.0f}ms)")
         return response.text.strip()
     except Exception as e:
-        logger.error(f"[Gemini] translate_to_assamese failed — {e}")
-        # Return original English if translation fails
-        return text
+        logger.warning(f"[Gemini] translate_to_assamese failed: {e}. Falling back to Groq.")
+        try:
+            start = time.time()
+            completion = groq_client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[{"role": "user", "content": full_prompt}]
+            )
+            duration_ms = (time.time() - start) * 1000
+            logger.info(f"[Groq] translate_to_assamese — Success ({duration_ms:.0f}ms)")
+            return completion.choices[0].message.content.strip()
+        except Exception as groq_e:
+            logger.error(f"[Groq] translate_to_assamese failed — {groq_e}")
+            return text
 
 async def assess_crop_image_gemini(image_bytes: bytes) -> dict:
     """
     Fallback method to assess crop damage using Gemini Vision.
     Used when the fine-tuned Colab endpoint is down.
-    """
-    prompt = """
-    You are an agricultural expert in Assam, India.
-    Analyze this flood-damaged crop image and return ONLY valid JSON:
-    {"crop_type": "string", "damage_pct": int, "advisory_en": "string", "advisory_as": "string"}
-    Make sure advisory_as is the Assamese translation of advisory_en.
     """
     try:
         # Wrap the image bytes in the format expected by the SDK
@@ -129,7 +184,7 @@ async def assess_crop_image_gemini(image_bytes: bytes) -> dict:
         }
         start = time.time()
         response = vision_model.generate_content(
-            [prompt, image_part],
+            [CROP_ASSESS_PROMPT, image_part],
             generation_config=genai.types.GenerationConfig(
                 response_mime_type="application/json",
             ),

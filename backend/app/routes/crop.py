@@ -17,7 +17,7 @@ async def assess_crop(image: UploadFile = File(...)):
     # Save image to uploads/ folder
     file_ext = image.filename.split('.')[-1] if '.' in image.filename else 'jpg'
     filename = f"{uuid.uuid4()}.{file_ext}"
-    filepath = f"backend/uploads/{filename}"
+    filepath = f"uploads/{filename}"
     
     with open(filepath, "wb") as f:
         f.write(contents)
