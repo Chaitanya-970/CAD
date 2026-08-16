@@ -2,6 +2,7 @@ import sqlite3
 import os
 import random
 import json
+import csv
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "afip.db")
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
@@ -129,6 +130,27 @@ def generate_safe_zones(villages):
         })
     return zones
 
+def generate_historical_csv():
+    os.makedirs(DATA_DIR, exist_ok=True)
+    csv_path = os.path.join(DATA_DIR, "historical.csv")
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["station_name", "month", "avg_level_m", "std_dev_m"])
+        
+        stations = [
+            ("ব্ৰহ্মপুত্ৰ মাজুলী", 84.0, 0.8),
+            ("ব্ৰহ্মপুত্ৰ ধুবুৰী", 33.0, 0.5),
+            ("বৰাক শিলচৰ", 20.0, 0.4)
+        ]
+        
+        for name, base_level, std_dev in stations:
+            for month in range(1, 13):
+                if 6 <= month <= 9:
+                    avg_level = base_level + random.uniform(0.5, 1.5)
+                else:
+                    avg_level = base_level - random.uniform(0.5, 1.5)
+                writer.writerow([name, month, round(avg_level, 2), std_dev])
+
 def seed():
     print("Initializing Database Schema...")
     conn = sqlite3.connect(DB_PATH)
@@ -136,6 +158,7 @@ def seed():
     cursor.executescript(SCHEMA)
 
     print("Generating Seed Data...")
+    generate_historical_csv()
     villages = generate_villages(60)
     safe_zones = generate_safe_zones(villages)
     
