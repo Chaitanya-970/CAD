@@ -66,31 +66,19 @@ def rank_safe_zones(safe_zones: List[Dict[str, Any]], river_stations: List[Dict[
         # 5. Weighted score
         safe_score = (elev_norm * 0.4) + (road_norm * 0.25) + (dist_norm * 0.2) + (cap_norm * 0.15)
         
-        # We need to exclude safe zones in flood zones. 
-        # A safe zone is excluded if its nearest village has a current_risk_score > 0.7.
-        is_flooded = False
-        nearest_village_id = z.get('nearest_village_id')
-        if nearest_village_id:
-            for v in villages:
-                if v.get('id') == nearest_village_id:
-                    if float(v.get('current_risk_score', 0.0)) > 0.7:
-                        is_flooded = True
-                    break
-        
-        if not is_flooded:
-            # 6. Update database
-            execute("UPDATE safe_zones SET safe_score = ? WHERE id = ?", (safe_score, z['id']))
-            z['safe_score'] = round(safe_score, 3)
-            z['component_scores'] = {
-                "elevation": round(elev_norm, 3),
-                "road_access": round(road_norm, 3),
-                "distance": round(dist_norm, 3),
-                "capacity": round(cap_norm, 3)
-            }
-            ranked_zones.append(z)
+        # 6. Update database
+        execute("UPDATE safe_zones SET safe_score = ? WHERE id = ?", (safe_score, z['id']))
+        z['safe_score'] = round(safe_score, 3)
+        z['component_scores'] = {
+            "elevation": round(elev_norm, 3),
+            "road_access": round(road_norm, 3),
+            "distance": round(dist_norm, 3),
+            "capacity": round(cap_norm, 3)
+        }
+        ranked_zones.append(z)
             
     # 7. Sort by safe_score descending
     ranked_zones.sort(key=lambda x: x['safe_score'], reverse=True)
     
-    logger.info(f"Ranked {len(safe_zones)} safe zones, {len(safe_zones) - len(ranked_zones)} excluded due to flood risk.")
+    logger.info(f"Ranked {len(safe_zones)} safe zones.")
     return ranked_zones

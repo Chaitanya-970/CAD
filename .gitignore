@@ -37,3 +37,10 @@ changes/
 
 # Local Dev Files
 MY_WORKLOAD.md
+presentation.md
+
+# Hackathon Temporary Files
+scratch/
+image.png
+backend/dummy.jpg
+backend/test_gradio.py
