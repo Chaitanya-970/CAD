@@ -1,6 +1,10 @@
 import json
+import time
+import logging
 import google.generativeai as genai
 from app.config import settings
+
+logger = logging.getLogger("afip")
 
 # Initialize Gemini Client
 genai.configure(api_key=settings.GEMINI_API_KEY)
@@ -51,35 +55,44 @@ async def answer_query(question: str, context: dict) -> str:
     """Answers a natural language query based on the live database context."""
     full_prompt = f"{QUERY_SYSTEM_PROMPT}\n\nContext:\n{json.dumps(context, default=str)}\n\nQuestion:\n{question}"
     try:
+        start = time.time()
         response = model.generate_content(full_prompt)
+        duration_ms = (time.time() - start) * 1000
+        logger.info(f"[Gemini] answer_query — Success ({duration_ms:.0f}ms)")
         return response.text.strip()
     except Exception as e:
-        print(f"Error in answer_query: {e}")
+        logger.error(f"[Gemini] answer_query failed — {e}")
         return "I couldn't process that query. Try rephrasing, or view the map directly."
 
 async def parse_sos_text(raw_text: str) -> dict:
     """Parses raw text into structured SOS data (location, people_count, needs)."""
     full_prompt = f"{SOS_PARSE_PROMPT}\n\nMessage: {raw_text}"
     try:
+        start = time.time()
         response = model.generate_content(
             full_prompt,
             generation_config=genai.types.GenerationConfig(
                 response_mime_type="application/json",
             ),
         )
+        duration_ms = (time.time() - start) * 1000
+        logger.info(f"[Gemini] parse_sos_text — Success ({duration_ms:.0f}ms)")
         return json.loads(response.text)
     except Exception as e:
-        print(f"Error in parse_sos_text: {e}")
+        logger.error(f"[Gemini] parse_sos_text failed — {e}")
         return {"location": None, "people_count": None, "needs": None}
 
 async def generate_alert_message(village_data: dict) -> str:
     """Generates an urgent but calm SMS alert based on prediction data."""
     full_prompt = f"{ALERT_GEN_PROMPT}\n\nData: {json.dumps(village_data, default=str)}"
     try:
+        start = time.time()
         response = model.generate_content(full_prompt)
+        duration_ms = (time.time() - start) * 1000
+        logger.info(f"[Gemini] generate_alert_message — Success ({duration_ms:.0f}ms)")
         return response.text.strip()
     except Exception as e:
-        print(f"Error in generate_alert_message: {e}")
+        logger.error(f"[Gemini] generate_alert_message failed — {e}")
         # Fallback to standard template if LLM fails
         return f"ALERT: High flood risk for {village_data.get('name', 'your village')}. Evacuate immediately."
 
@@ -87,10 +100,13 @@ async def translate_to_assamese(text: str) -> str:
     """Translates English text to Assamese."""
     full_prompt = f"{TRANSLATE_PROMPT}\n\nText: {text}"
     try:
+        start = time.time()
         response = model.generate_content(full_prompt)
+        duration_ms = (time.time() - start) * 1000
+        logger.info(f"[Gemini] translate_to_assamese — Success ({duration_ms:.0f}ms)")
         return response.text.strip()
     except Exception as e:
-        print(f"Error in translate_to_assamese: {e}")
+        logger.error(f"[Gemini] translate_to_assamese failed — {e}")
         # Return original English if translation fails
         return text
 
@@ -111,15 +127,18 @@ async def assess_crop_image_gemini(image_bytes: bytes) -> dict:
             "mime_type": "image/jpeg",
             "data": image_bytes
         }
+        start = time.time()
         response = vision_model.generate_content(
             [prompt, image_part],
             generation_config=genai.types.GenerationConfig(
                 response_mime_type="application/json",
             ),
         )
+        duration_ms = (time.time() - start) * 1000
+        logger.info(f"[Gemini] assess_crop_image_gemini — Success ({duration_ms:.0f}ms)")
         return json.loads(response.text)
     except Exception as e:
-        print(f"Error in assess_crop_image_gemini: {e}")
+        logger.error(f"[Gemini] assess_crop_image_gemini failed — {e}")
         # Return safe default indicating failure to assess
         return {
             "crop_type": "Unknown", 
