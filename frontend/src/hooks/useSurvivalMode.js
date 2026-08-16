@@ -16,9 +16,7 @@ import { addToQueue, getAllQueued, getQueueCount, removeFromQueue } from '@/lib/
  *  2. Fallback: navigator.onLine — true -> full, false -> offline.
  */
 export function useSurvivalMode() {
-  const [mode, setMode] = useState(() =>
-    typeof navigator === 'undefined' ? 'full' : navigator.onLine ? 'full' : 'offline'
-  );
+  const [mode, setMode] = useState('full');
   const [queuedCount, setQueuedCount] = useState(0);
   const [justRestored, setJustRestored] = useState(false);
   const wasOffline = useRef(false);

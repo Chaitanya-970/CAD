@@ -4,7 +4,7 @@
 export const BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-const TIMEOUT_MS = 10000; // R12 — 10 second timeout on all API calls
+const TIMEOUT_MS = 60000; // Increased to 60s to allow LLM processing of massive DB context
 
 /**
  * fetchAPI - wraps fetch with a base URL, JSON handling, and a 10s timeout.

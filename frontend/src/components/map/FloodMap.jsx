@@ -121,7 +121,7 @@ export default function FloodMap({
   return (
     <div className={styles.mapWrapper}>
       <MapContainer center={ASSAM_CENTER} zoom={DEFAULT_ZOOM} className={styles.mapContainer} preferCanvas>
-        <TileLayerToggle enabled={!lowBandwidth} />
+        <TileLayerToggle enabled={!lowBandwidth && !offline} />
         {showFlood && villageMarkers}
         {showSafe && safeZoneMarkers}
         {showSOS && sosMarkers}
