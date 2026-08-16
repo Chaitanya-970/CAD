@@ -1,0 +1,74 @@
+.panel {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 500;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px var(--color-shadow);
+  width: 260px;
+  font-size: 0.875rem;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.header span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.station {
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+
+.stationName {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sliderLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.sliderLabel input[type='range'] {
+  width: 100%;
+  accent-color: var(--color-primary);
+}
+
+.message {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}

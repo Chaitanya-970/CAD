@@ -1,0 +1,111 @@
+.chatPanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-bg-light);
+  border-left: 3px solid var(--color-primary);
+  font-family: var(--font-body);
+}
+
+.chatHeader {
+  padding: var(--space-md);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.chatEmpty {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-md);
+}
+
+.suggestionBtn {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.suggestionBtn:hover {
+  border-color: var(--color-primary);
+}
+
+.bubbleRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubbleUser {
+  background: var(--color-primary);
+  color: var(--color-white);
+  align-self: flex-end;
+  padding: var(--space-sm) var(--space-md);
+  max-width: 85%;
+  font-size: 0.875rem;
+}
+
+.bubbleAi {
+  background: var(--color-white);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  align-self: flex-start;
+  padding: var(--space-sm) var(--space-md);
+  max-width: 85%;
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+}
+
+.bubbleAiError {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.inputRow {
+  display: flex;
+  gap: 6px;
+  padding: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.input {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  padding: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.sendBtn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0 var(--space-md);
+  cursor: pointer;
+}
+
+.sendBtn:disabled {
+  background: var(--color-text-muted);
+  cursor: not-allowed;
+}

@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AFIP Frontend — Assam Flood Intelligence Platform
 
-## Getting Started
+Next.js (App Router) dashboard for AFIP — built per `RFC-001`, `RFC-003`,
+the frontend portions of `RFC-005`, and `RFC-006`.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, JS, CSS Modules — no Tailwind)
+- **Leaflet.js + react-leaflet** for the map (dynamically imported, `ssr: false`)
+- **lucide-react** for icons
+- Design tokens (colors/fonts/spacing) lifted directly from `DESIGN.md`
+
+## Getting started
 
 ```bash
+npm install
+cp .env.local.example .env.local   # set NEXT_PUBLIC_API_URL if backend isn't on :8000
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. The FastAPI backend (RFC-001/002/004/005) is expected
+at `http://localhost:8000` by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**No backend yet?** The dashboard still works — `src/lib/mockData.js` provides
+demo villages, safe zones, and SOS pins so the map renders and is fully
+interactive even before the backend is running. A small "Demo data" badge
+appears in the status bar whenever it's serving mock data instead of live data.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Structure
 
-## Learn More
+```
+src/
+  app/
+    page.js                landing page
+    dashboard/page.js       main map dashboard (F1, F11, F12, F20, F6, F8)
+    crop/page.js             crop damage upload + results (F7)
+  components/
+    map/                    FloodMap, popups, SOS pins, text-only list
+    alerts/                 SimulationPanel (river-level sliders → /api/predict)
+    chat/                   QueryChat (Gov-GPT)
+    survival/               ModeBanner (Survival Mode UI)
+    layout/                 Header/nav
+    ErrorBoundary.jsx
+  hooks/
+    useSurvivalMode.js       bandwidth detection + offline queueing (F8)
+  lib/
+    api.js                   fetchAPI client (10s timeout, typed endpoint helpers)
+    offlineQueue.js          IndexedDB wrapper for queued offline requests
+    mockData.js              demo fallback data
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Chrome is required for full Survival Mode fidelity (`navigator.connection`
+  is Chromium-only); other browsers fall back to the `navigator.onLine`
+  boolean check, per PRD §6.1 / R45.
+- Map center defaults to the Brahmaputra valley (~26.2°N, 92.9°E), zoom 8.
+- All external API calls go through `fetchAPI`, which enforces a 10-second
+  timeout and surfaces failures to the UI rather than hanging silently.

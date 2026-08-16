@@ -1,0 +1,25 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.offline {
+  background: var(--color-danger);
+  color: var(--color-white);
+}
+
+.lowBandwidth {
+  background: var(--color-warning);
+  color: var(--color-text);
+}
+
+.restored {
+  background: var(--color-safe);
+  color: var(--color-white);
+}
