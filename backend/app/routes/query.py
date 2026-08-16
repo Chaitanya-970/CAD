@@ -8,9 +8,10 @@ router = APIRouter()
 @router.post("/api/query", response_model=QueryResponse)
 async def query_ai(request: QueryRequest):
     # Build context from live DB data
-    villages = fetch_all("SELECT * FROM villages")
-    sos = fetch_all("SELECT * FROM sos_messages WHERE status = 'active'")
-    safe_zones = fetch_all("SELECT * FROM safe_zones")
+    # Fetch only necessary columns to keep token count under Groq's 6000 TPM limit
+    villages = fetch_all("SELECT id, name, district, current_risk_score FROM villages")
+    sos = fetch_all("SELECT id, parsed_location, parsed_needs, parsed_people_count FROM sos_messages WHERE status = 'active'")
+    safe_zones = fetch_all("SELECT id, name, capacity_est, safe_score, nearest_village_id FROM safe_zones")
     
     context = {
         "villages": villages,

@@ -11,14 +11,16 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 logger = logging.getLogger("afip")
 
-# Initialize Gemini Client
-genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-flash-latest')
-vision_model = genai.GenerativeModel('gemini-flash-latest')
+# Initialize Gemini Client (Only if key is real)
+USE_GEMINI = settings.GEMINI_API_KEY and settings.GEMINI_API_KEY.lower() != "dummy"
+if USE_GEMINI:
+    genai.configure(api_key=settings.GEMINI_API_KEY)
+    model = genai.GenerativeModel('gemini-flash-latest')
+    vision_model = genai.GenerativeModel('gemini-flash-latest')
 
 # Initialize Groq Client (Fallback)
 groq_client = Groq(api_key=settings.GROQ_API_KEY)
-GROQ_MODEL = "llama3-8b-8192"
+GROQ_MODEL = "llama-3.1-8b-instant"
 
 # -----------------------------------------------------------------------------
 # Prompt Constants (To be tuned by ML Teammate)
@@ -70,6 +72,8 @@ async def answer_query(question: str, context: dict) -> str:
     """Answers a natural language query based on the live database context."""
     full_prompt = f"{QUERY_SYSTEM_PROMPT}\n\nContext:\n{json.dumps(context, default=str)}\n\nQuestion:\n{question}"
     try:
+        if not USE_GEMINI:
+            raise Exception("Gemini disabled")
         start = time.time()
         response = model.generate_content(full_prompt)
         duration_ms = (time.time() - start) * 1000
@@ -94,6 +98,8 @@ async def parse_sos_text(raw_text: str) -> dict:
     """Parses raw text into structured SOS data (location, people_count, needs)."""
     full_prompt = f"{SOS_PARSE_PROMPT}\n\nMessage: {raw_text}"
     try:
+        if not USE_GEMINI:
+            raise Exception("Gemini disabled")
         start = time.time()
         response = model.generate_content(
             full_prompt,
@@ -127,6 +133,8 @@ async def generate_alert_message(village_data: dict) -> str:
     """Generates an urgent but calm SMS alert based on prediction data."""
     full_prompt = f"{ALERT_GEN_PROMPT}\n\nData: {json.dumps(village_data, default=str)}"
     try:
+        if not USE_GEMINI:
+            raise Exception("Gemini disabled")
         start = time.time()
         response = model.generate_content(full_prompt)
         duration_ms = (time.time() - start) * 1000
@@ -151,6 +159,8 @@ async def translate_to_assamese(text: str) -> str:
     """Translates English text to Assamese."""
     full_prompt = f"{TRANSLATE_PROMPT}\n\nText: {text}"
     try:
+        if not USE_GEMINI:
+            raise Exception("Gemini disabled")
         start = time.time()
         response = model.generate_content(full_prompt)
         duration_ms = (time.time() - start) * 1000
@@ -177,6 +187,8 @@ async def assess_crop_image_gemini(image_bytes: bytes) -> dict:
     Used when the fine-tuned Colab endpoint is down.
     """
     try:
+        if not USE_GEMINI:
+            raise Exception("Gemini disabled")
         # Wrap the image bytes in the format expected by the SDK
         image_part = {
             "mime_type": "image/jpeg",

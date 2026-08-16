@@ -147,8 +147,12 @@ AFIP is built on a highly resilient, modern architecture that ensures data flows
 
 ## The AI Pipeline (Qwen2-VL)
 Our multi-agent pipeline powers the backend logic for disaster relief, connecting **Vision → RAG → Weather → Cost** estimation.
+
+<div style="text-align: center; margin-top: 20px;">
+  <img src="image.png" alt="AI Pipeline Architecture" style="max-height: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</div>
    
-<p style="font-style: italic; font-size: 36px; margin-top: 40px;">
+<p style="font-style: italic; font-size: 24px; margin-top: 20px; text-align: center;">
   "We fine-tuned Qwen2-VL on 300 samples for 1 epoch due to time constraints — the pipeline is fully functional, and accuracy would improve with a longer training run on the full dataset."
 </p>
 
