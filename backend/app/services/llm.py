@@ -71,27 +71,31 @@ Make sure advisory_as is the Assamese translation of advisory_en.
 async def answer_query(question: str, context: dict) -> str:
     """Answers a natural language query based on the live database context."""
     full_prompt = f"{QUERY_SYSTEM_PROMPT}\n\nContext:\n{json.dumps(context, default=str)}\n\nQuestion:\n{question}"
+    
+    # Prioritize Groq for text queries because it is significantly faster
     try:
-        if not USE_GEMINI:
-            raise Exception("Gemini disabled")
+        if not settings.GROQ_API_KEY:
+            raise Exception("Groq disabled")
         start = time.time()
-        response = model.generate_content(full_prompt)
+        completion = groq_client.chat.completions.create(
+            model=GROQ_MODEL,
+            messages=[{"role": "user", "content": full_prompt}]
+        )
         duration_ms = (time.time() - start) * 1000
-        logger.info(f"[Gemini] answer_query — Success ({duration_ms:.0f}ms)")
-        return response.text.strip()
-    except Exception as e:
-        logger.warning(f"[Gemini] answer_query failed: {e}. Falling back to Groq.")
+        logger.info(f"[Groq] answer_query - Success ({duration_ms:.0f}ms)")
+        return completion.choices[0].message.content.strip()
+    except Exception as groq_e:
+        logger.warning(f"[Groq] answer_query failed: {groq_e}. Falling back to Gemini.")
         try:
+            if not USE_GEMINI:
+                raise Exception("Gemini disabled")
             start = time.time()
-            completion = groq_client.chat.completions.create(
-                model=GROQ_MODEL,
-                messages=[{"role": "user", "content": full_prompt}]
-            )
+            response = model.generate_content(full_prompt)
             duration_ms = (time.time() - start) * 1000
-            logger.info(f"[Groq] answer_query — Success ({duration_ms:.0f}ms)")
-            return completion.choices[0].message.content.strip()
-        except Exception as groq_e:
-            logger.error(f"[Groq] answer_query failed — {groq_e}")
+            logger.info(f"[Gemini] answer_query - Success ({duration_ms:.0f}ms)")
+            return response.text.strip()
+        except Exception as e:
+            logger.error(f"[Gemini] answer_query failed - {e}")
             return "I couldn't process that query. Try rephrasing, or view the map directly."
 
 async def parse_sos_text(raw_text: str) -> dict:
